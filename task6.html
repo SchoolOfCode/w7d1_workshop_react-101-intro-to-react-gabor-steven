@@ -21,9 +21,24 @@
 
       function CheckBox(props) {
         // render a checkbox that is controlled by the checked prop
+
+        console.log(props);
+        return (
+          <label className="container">
+            {props.text}
+            <input type="checkbox" checked={props.checked} />
+            <span class="checkmark"></span>
+          </label>
+        );
       }
 
-      ReactDOM.render(<CheckBox checked={true} />, rootElement);
+      ReactDOM.render(
+        [
+          <CheckBox checked={true} text="one" />,
+          <CheckBox checked={false} text="two" />,
+        ],
+        rootElement
+      );
     </script>
   </body>
 </html>
