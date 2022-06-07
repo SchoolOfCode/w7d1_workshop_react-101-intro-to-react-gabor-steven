@@ -12,15 +12,23 @@
   src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
   crossorigin
 ></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script>
+    <script type = "text/babel">
       const rootElement = document.querySelector("#root");
       // const element = document.createElement("div");
-        const element = React.createElement("h1", {className: "container"}, "Hello World");
+      //  const element = React.createElement("h1", {className: "container"}, "Hello World");
       //rootElement.appendChild(element);
-      ReactDOM.render(element,rootElement)
+      //ReactDOM.render(element,rootElement)
+
+      function HelloWorld(){
+        return (<h2 className= "container">Hello World!</h2>)
+      }
+
+      ReactDOM.render(HelloWorld(), rootElement);
+
     </script>
   </body>
 </html>
