@@ -12,10 +12,11 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script>
+    <script type = "text/babel">
       const rootElement = document.querySelector("#root");
 
       function handleClick(e) {
@@ -23,7 +24,7 @@
       }
       function Button(props, handleClick) {
         // code here
-
+/*
         return React.createElement(
           "button",
           {
@@ -33,7 +34,9 @@
           props.text
         );
       }
-
+*/
+return (<button className={props.className} onClick={props.onClick}>{props.text}</button>)
+    }
       const ButtonProp = {
         className: "button",
         onClick: handleClick,
