@@ -21,15 +21,26 @@
       function handleClick(e) {
         alert("You clicked me!");
       }
-      function Button() {
+      function Button(props, handleClick) {
         // code here
-        const button = React.createElement("button", {
-      className: "button"}, "click me")
-        return;
-      }
-        
 
-      ReactDOM.render(Button(), rootElement);
+        return React.createElement(
+          "button",
+          {
+            className: props.className,
+            onClick: props.onClick,
+          },
+          props.text
+        );
+      }
+
+      const ButtonProp = {
+        className: "button",
+        onClick: handleClick,
+        text: "Click me",
+      };
+
+      ReactDOM.render(Button(ButtonProp, handleClick), rootElement);
     </script>
   </body>
 </html>
